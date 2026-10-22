@@ -7,7 +7,7 @@ project:
 
 website:
   page-navigation: true
-  title: "TITLE"
+  title: "Campus Safety"
   description: "Project 01: Data Collection Facts Label"
 
   navbar: 
@@ -19,7 +19,7 @@ website:
         menu:
         - text: "Person 1"
           href: person1.qmd
-        - text: "Person 2"
+        - text: "Cailin Wilson"
           href: person2.qmd
       - text: "Comparative Analysis"
         href: comparison.qmd
