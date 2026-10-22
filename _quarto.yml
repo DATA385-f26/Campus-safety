@@ -21,6 +21,8 @@ website:
           href: person1.qmd
         - text: "Person 2"
           href: person2.qmd
+        - text: "Tony Fierro"
+          href: tony.qmd
       - text: "Comparative Analysis"
         href: comparison.qmd
 
