@@ -20,11 +20,11 @@ website:
         - text: "Jack Roue"
           href: JackRoue.qmd
         - text: "Cailin Wilson"
-          href: Cailin.Wilsom.qmd
-        - text: "Tony "
-          href: Tony.qmd
+          href: CailinWilson.qmd
+        - text: "Tony Fierro"
+          href: tony.qmd
       - text: "Comparative Analysis"
-        href: comparison.qmd
+        href: analysis.qmd
 
 format:
   html:

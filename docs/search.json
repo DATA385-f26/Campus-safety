@@ -1,0 +1,86 @@
+[
+  {
+    "objectID": "tony.html",
+    "href": "tony.html",
+    "title": "Campus Safety and Security (CSS) Data",
+    "section": "",
+    "text": "This fact sheet describes the U.S. Department of Education’s Campus Safety and Security (CSS) Data source.\nView the original Google Sheet"
+  },
+  {
+    "objectID": "tony.html#source-identity",
+    "href": "tony.html#source-identity",
+    "title": "Campus Safety and Security (CSS) Data",
+    "section": "Source Identity",
+    "text": "Source Identity\n\n\n\n\n\n\n\nField\nDescription\n\n\n\n\nSource name\nCampus Safety and Security (CSS) Data\n\n\nDomain/topic\nHigher education; campus crime, violence, security, and public safety\n\n\nSource type\nDAT — downloadable institutional data files"
+  },
+  {
+    "objectID": "tony.html#collection-context",
+    "href": "tony.html#collection-context",
+    "title": "Campus Safety and Security (CSS) Data",
+    "section": "Collection Context",
+    "text": "Collection Context\n\n\n\n\n\n\n\nField\nDescription\n\n\n\n\nCollector/producer\nU.S. Department of Education, Office of Postsecondary Education (OPE)\n\n\nOriginal purpose\nTo collect and publish information about crime and safety at U.S. colleges and universities, support federal reporting requirements, and provide students, families, and the public with information about campus safety.\n\n\nCollection method\nAnnual Campus Safety and Security Survey completed by postsecondary institutions participating in federal student financial assistance programs. Institutions report statistics collected through campus security authorities and other applicable sources.\n\n\nRecord-creation event\nAn institution submits its annual Campus Safety and Security Survey, reporting criminal offenses, arrests, disciplinary referrals, and other required safety statistics for the applicable reporting years."
+  },
+  {
+    "objectID": "tony.html#observation-and-scope",
+    "href": "tony.html#observation-and-scope",
+    "title": "Campus Safety and Security (CSS) Data",
+    "section": "Observation and Scope",
+    "text": "Observation and Scope\n\n\n\n\n\n\n\nField\nDescription\n\n\n\n\nUnit of observation\nIndividual postsecondary institution or campus, with reported incidents categorized by offense, calendar year, and geographic location.\n\n\nPopulation or objects represented\nU.S. colleges and universities participating in Title IV federal student financial assistance programs.\n\n\nTime period covered\nAnnual reporting, with each survey generally including crime statistics for the preceding three calendar years.\n\n\nGeographic area coverage\nUnited States, including participating postsecondary institutions nationwide."
+  },
+  {
+    "objectID": "tony.html#variables-and-data-structure",
+    "href": "tony.html#variables-and-data-structure",
+    "title": "Campus Safety and Security (CSS) Data",
+    "section": "Variables and Data Structure",
+    "text": "Variables and Data Structure\n\n\n\n\n\n\n\nField\nDescription\n\n\n\n\nMain variables/fields\nInstitution name and location; criminal offense categories; reported incidents of murder, robbery, aggravated assault, burglary, motor vehicle theft, sexual offenses, and other crimes; hate crimes; arrests; disciplinary referrals; and campus geographic categories.\n\n\nData types included\nCategorical variables, institution identifiers, calendar years, geographic classifications, and numerical counts of reported incidents.\n\n\nDirect measurements\nInstitution-reported counts of criminal offenses, arrests, disciplinary referrals, and other incidents occurring within defined campus reporting locations.\n\n\nPossible proxy variables\nReported crime counts as indicators of campus safety; arrests and disciplinary referrals as indicators of reported violations; changes in incident counts over time as indicators of trends in campus crime and safety."
+  },
+  {
+    "objectID": "tony.html#documentation",
+    "href": "tony.html#documentation",
+    "title": "Campus Safety and Security (CSS) Data",
+    "section": "Documentation",
+    "text": "Documentation\n\n\n\n\n\n\n\nField\nDescription\n\n\n\n\nDocumentation found\nCampus Safety and Security Survey User’s Guide; Campus Safety and Security Data Analysis Cutting Tool User Guide; downloadable institutional data files; survey reporting instructions and definitions.\n\n\nStated collection details\nPostsecondary institutions participating in federal student financial assistance programs submit annual campus crime and safety statistics under the Clery Act. Reported incidents are classified by offense type, calendar year, and geographic location. The Department of Education makes the information publicly available for institutional comparisons and analysis."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Investigating a Dataset’s Ingredients",
+    "section": "",
+    "text": "Introduce your topic area. What did you choose, why did you choose it?"
+  },
+  {
+    "objectID": "index.html#topic-area",
+    "href": "index.html#topic-area",
+    "title": "Investigating a Dataset’s Ingredients",
+    "section": "",
+    "text": "Introduce your topic area. What did you choose, why did you choose it?"
+  },
+  {
+    "objectID": "index.html#research-question",
+    "href": "index.html#research-question",
+    "title": "Investigating a Dataset’s Ingredients",
+    "section": "Research Question",
+    "text": "Research Question\nState your research question that you hope to answer with data."
+  },
+  {
+    "objectID": "analysis.html",
+    "href": "analysis.html",
+    "title": "Analysis",
+    "section": "",
+    "text": "Trustworthiness/reputability \\What documentation is available for each source? \\For Cailin’s source, NCES, provides Public-Use Data File User’s Manual, public-use data files, survey questionnaire, and codebook/record-layout documentation. \\For Tony’s source, U.S. Department of Education, provides Survey User’s Guide, Data Analysis Cutting Tool User Guide, downloadable institutional data files, survey reporting instructions and definitions. \\For Jack’s data, Plain Campus, it provides A CSV file and the two government databases it draws from. No methodology document is listed. \\What information is missing, unclear, or not stated in each source? \\For Cailin’s data, the information missing includes: the 2021-22 response rate and final sample size, the mail follow-up details, the file format (earlier years used fixed-format ASCII), and the incident definitions. \\For Tony’s data, the missing information includes: whether OPE verifies submissions, file formats, the earliest year available, and release timing. \\For Jack’s data, missing data includes: how non-reporting campuses are handled, and enrollment definition. \\What limitations or data quality issues might come from how each source was collected? \\For Cailin’s data, \\For Tony’s data, \\For Jack’s data, \\Degree of relevance to research question \\How do the collection methods affect what kinds of conclusions someone could make? \\ \\In order to answer your research question, would you be employing any of the variables as proxies? \\ \\If you could improve one source, what additional data would you add? \\ \\Ethical soundness \\What possible bias might be present in either source? \\ \\What ethical concerns might be connected to either source? Scope What does one row, record, case, or entry represent in each source? \\ \\What populations do each dataset represent? \\ \\Which is more relevant to your research question? Why? \\ \\What other claims could someone reasonably make using these sources? \\"
+  },
+  {
+    "objectID": "CailinWilson.html",
+    "href": "CailinWilson.html",
+    "title": "Data Collection Facts Label",
+    "section": "",
+    "text": "Data Source Facts Label\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSource Identity\n\n\n\n\n\n\nSource name\n\n\nNCES\n\n\n\n\nDomain/topic\n\n\n2021-22 School Survey on Crime and Safety (SSOCS) Public-Use Data Files and User’s Manual\n\n\n\n\nSource type\n\n\nDAT\n\n\n\n\n\n\n\n\n\n\n\nCollection Context\n\n\n\n\n\n\nCollector/producer\n\n\nNational Center for Education Statistics (NCES)\n\n\n\n\nOriginal purpose\n\n\nTo produce nationally representative estimates of school crime, violence, disciplinary problems, school disorder, safety policies, and prevention programs in U.S. public schools\n\n\n\n\nCollection method\n\n\nSurvey questionnaire completed by school principals or other knowledgeable school personnel; questionnaires were distributed by mail, with follow-up procedures to encourage responses\n\n\n\n\nRecord-creation event\n\n\nA school representative completed the SSOCS questionnaire, reporting on school crime, safety practices, incidents, and policies during the 2021–22 school year.\n\n\n\n\n\n\n\n\n\n\n\nObservation and Scope\n\n\n\n\n\n\nUnit of observation\n\n\nIndividual public school\n\n\n\n\nPopulation or objects represented\n\n\nU.S. public elementary, middle, high, and combined schools represented by the survey’s sampling design\n\n\n\n\nTime period covered\n\n\n2021-2022 school year\n\n\n\n\nGeographic area coverage\n\n\nUnited States, national coverage\n\n\n\n\n\n\n\n\n\n\n\nVariables and Data Structure\n\n\n\n\n\n\nMain variables/fields\n\n\nSchool characteristics; types and frequency of crimes and violent incidents; disciplinary problems and actions; security staff; safety policies; prevention programs; mental health services; staff training; and school climate and safety practices\n\n\n\n\nData types included\n\n\nCategorical variables, binary responses, ordinal response categories, and numerical counts or percentages; variable formats depend on the question\n\n\n\n\nDirect measurements\n\n\nSchool-reported counts or estimates of incidents, disciplinary actions, and other school conditions, along with reported policies, programs, and practices\n\n\n\n\nPossible proxy variables\n\n\nReported crime and disciplinary incidents as indicators of school safety; reported policies, security measures, and prevention programs as indicators of a school’s safety practices\n\n\n\n\n\n\n\n\n\n\n\nDocumentation\n\n\n\n\n\n\nDocumentation found\n\n\n2021–22 Public-Use Data File User’s Manual; public-use data files; survey questionnaire; codebook and record-layout documentation\n\n\n\n\nStated collection details\n\n\nA nationally representative, school-level survey of public schools. Respondents report school conditions, crime, disciplinary issues, and safety policies. The user manual documents the data files, variable definitions, coding, and guidance for analysis"
+  },
+  {
+    "objectID": "JackRoue.html",
+    "href": "JackRoue.html",
+    "title": "Data Collection Facts Label",
+    "section": "",
+    "text": "Data Source Facts Label\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSource Identity\n\n\n\n\n\n\nSource name\n\n\nPlain Campus\n\n\n\n\nDomain/topic\n\n\nCampus Safety\n\n\n\n\nSource type\n\n\nPublic Dataset\n\n\n\n\n\n\n\n\n\n\n\nCollection Context\n\n\n\n\n\n\nCollector/producer\n\n\nPlain Campus (Public Org.)\n\n\n\n\nOriginal purpose\n\n\nDetermining if your campus is safe based on averages from all campuses polled and ability to compare satefy ratings\n\n\n\n\nCollection method\n\n\nPlainCampus aggregates data from two official U.S. federal government databases: OPE Campus Safety Survey and IPEDS Institutional Data\n\n\n\n\nRecord-creation event\n\n\nThe surveys above being published, updates every 2 years\n\n\n\n\n\n\n\n\n\n\n\nObservation and Scope\n\n\n\n\n\n\nUnit of observation\n\n\nOn-campus Criminal Offenses and VAWA reports per 1,000 enrolled students\n\n\n\n\nPopulation or objects represented\n\n\nUS colleges and universities\n\n\n\n\nTime period covered\n\n\n2 Years\n\n\n\n\nGeographic area coverage\n\n\nUnited States of America\n\n\n\n\n\n\n\n\n\n\n\nVariables and Data Structure\n\n\n\n\n\n\nMain variables/fields\n\n\nCriminal Offences and VAWA reparts\n\n\n\n\nData types included\n\n\nState, Enrollment, Safety Score\n\n\n\n\nDirect measurements\n\n\nState, Enrollment, Criminal Offences, and VAWA reports\n\n\n\n\nPossible proxy variables\n\n\nDifferent types of crime reports\n\n\n\n\n\n\n\n\n\n\n\nDocumentation\n\n\n\n\n\n\nDocumentation found\n\n\ncsv file, two goverment databases\n\n\n\n\nStated collection details\n\n\nnot stated"
+  }
+]
