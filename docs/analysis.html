@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Phase 3: Comparative Analysis of Campus Safety Data Sources – Campus Safety</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-92404dd89b1444827012a9e3a58cda88.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-8b348f4b4b74a528bf910da1e8c5139e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-92404dd89b1444827012a9e3a58cda88.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Campus Safety</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Overview</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-dataset-details" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Dataset Details</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-dataset-details">    
+        <li>
+    <a class="dropdown-item" href="./JackRoue.html">
+ <span class="dropdown-text">Jack Roue</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./CailinWilson.html">
+ <span class="dropdown-text">Cailin Wilson</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./tony.html">
+ <span class="dropdown-text">Tony Fierro</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link active" href="./analysis.html" aria-current="page"> 
+<span class="menu-text">Comparative Analysis</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#research-question" id="toc-research-question" class="nav-link active" data-scroll-target="#research-question">Research Question</a></li>
+  <li><a href="#trustworthiness-and-reputability" id="toc-trustworthiness-and-reputability" class="nav-link" data-scroll-target="#trustworthiness-and-reputability">1. Trustworthiness and Reputability</a>
+  <ul class="collapse">
+  <li><a href="#what-documentation-is-available-for-each-source" id="toc-what-documentation-is-available-for-each-source" class="nav-link" data-scroll-target="#what-documentation-is-available-for-each-source">What documentation is available for each source?</a></li>
+  <li><a href="#what-information-is-missing-unclear-or-not-stated" id="toc-what-information-is-missing-unclear-or-not-stated" class="nav-link" data-scroll-target="#what-information-is-missing-unclear-or-not-stated">What information is missing, unclear, or not stated?</a></li>
+  <li><a href="#what-limitations-or-data-quality-issues-might-result-from-collection-methods" id="toc-what-limitations-or-data-quality-issues-might-result-from-collection-methods" class="nav-link" data-scroll-target="#what-limitations-or-data-quality-issues-might-result-from-collection-methods">What limitations or data quality issues might result from collection methods?</a></li>
+  </ul></li>
+  <li><a href="#degree-of-relevance-to-our-research-question" id="toc-degree-of-relevance-to-our-research-question" class="nav-link" data-scroll-target="#degree-of-relevance-to-our-research-question">2. Degree of Relevance to Our Research Question</a>
+  <ul class="collapse">
+  <li><a href="#how-do-the-collection-methods-affect-possible-conclusions" id="toc-how-do-the-collection-methods-affect-possible-conclusions" class="nav-link" data-scroll-target="#how-do-the-collection-methods-affect-possible-conclusions">How do the collection methods affect possible conclusions?</a></li>
+  <li><a href="#which-variables-would-be-used-as-proxies" id="toc-which-variables-would-be-used-as-proxies" class="nav-link" data-scroll-target="#which-variables-would-be-used-as-proxies">Which variables would be used as proxies?</a></li>
+  <li><a href="#what-additional-data-would-improve-the-sources" id="toc-what-additional-data-would-improve-the-sources" class="nav-link" data-scroll-target="#what-additional-data-would-improve-the-sources">What additional data would improve the sources?</a></li>
+  </ul></li>
+  <li><a href="#ethical-soundness" id="toc-ethical-soundness" class="nav-link" data-scroll-target="#ethical-soundness">3. Ethical Soundness</a>
+  <ul class="collapse">
+  <li><a href="#what-possible-bias-might-be-present" id="toc-what-possible-bias-might-be-present" class="nav-link" data-scroll-target="#what-possible-bias-might-be-present">What possible bias might be present?</a></li>
+  <li><a href="#what-ethical-concerns-might-be-connected-to-these-sources" id="toc-what-ethical-concerns-might-be-connected-to-these-sources" class="nav-link" data-scroll-target="#what-ethical-concerns-might-be-connected-to-these-sources">What ethical concerns might be connected to these sources?</a></li>
+  </ul></li>
+  <li><a href="#scope-and-representation" id="toc-scope-and-representation" class="nav-link" data-scroll-target="#scope-and-representation">4. Scope and Representation</a>
+  <ul class="collapse">
+  <li><a href="#what-does-one-observation-represent" id="toc-what-does-one-observation-represent" class="nav-link" data-scroll-target="#what-does-one-observation-represent">What does one observation represent?</a></li>
+  <li><a href="#which-populations-do-the-datasets-represent" id="toc-which-populations-do-the-datasets-represent" class="nav-link" data-scroll-target="#which-populations-do-the-datasets-represent">Which populations do the datasets represent?</a></li>
+  <li><a href="#what-other-claims-could-reasonably-be-made" id="toc-what-other-claims-could-reasonably-be-made" class="nav-link" data-scroll-target="#what-other-claims-could-reasonably-be-made">What other claims could reasonably be made?</a></li>
+  </ul></li>
+  <li><a href="#overall-assessment-and-conclusion" id="toc-overall-assessment-and-conclusion" class="nav-link" data-scroll-target="#overall-assessment-and-conclusion">5. Overall Assessment and Conclusion</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Phase 3: Comparative Analysis of Campus Safety Data Sources</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="research-question" class="level2">
+<h2 class="anchored" data-anchor-id="research-question">Research Question</h2>
+<p>Is there a relationship between annual undergraduate tuition costs and the rate of reported violent crimes at U.S. colleges and universities?</p>
+<p>Our group examined three data sources to determine which would best support our research question: the National Center for Education Statistics (NCES) School Survey on Crime and Safety, the U.S. Department of Education’s Campus Safety and Security (CSS) dataset, and PlainCampus.</p>
+<p>Although all three sources provide information about crime and safety in educational settings, they differ in their collection methods, populations, available variables, and documentation. These differences are important when determining which source is most appropriate for our research.</p>
+</section>
+<section id="trustworthiness-and-reputability" class="level2">
+<h2 class="anchored" data-anchor-id="trustworthiness-and-reputability">1. Trustworthiness and Reputability</h2>
+<section id="what-documentation-is-available-for-each-source" class="level3">
+<h3 class="anchored" data-anchor-id="what-documentation-is-available-for-each-source">What documentation is available for each source?</h3>
+<p>Cailin’s source, the National Center for Education Statistics (NCES), provides extensive documentation for its 2021–22 School Survey on Crime and Safety (SSOCS). This includes a Public-Use Data File User’s Manual, public-use data files, the survey questionnaire, and codebook and record-layout documentation. These resources help researchers understand how the data were collected, organized, and intended to be analyzed.</p>
+<p>Tony’s source, the Campus Safety and Security (CSS) dataset from the U.S. Department of Education’s Office of Postsecondary Education, also provides substantial documentation. Available resources identified in the fact sheet include a Survey User’s Guide, Data Analysis Cutting Tool User Guide, downloadable institutional data files, and survey reporting instructions and definitions. Because the data are collected through an established federal reporting process, researchers have access to standardized crime categories and institutional reporting information.</p>
+<p>Jack’s source, PlainCampus, aggregates information from two federal government databases: the Office of Postsecondary Education’s campus safety reporting and the Integrated Postsecondary Education Data System (IPEDS). The fact sheet identifies a downloadable CSV file and the underlying government databases. However, it does not identify a separate methodology document explaining how PlainCampus processes the data or calculates its comparative safety scores.</p>
+</section>
+<section id="what-information-is-missing-unclear-or-not-stated" class="level3">
+<h3 class="anchored" data-anchor-id="what-information-is-missing-unclear-or-not-stated">What information is missing, unclear, or not stated?</h3>
+<p>For NCES, our original fact sheet does not specify the final 2021–22 response rate, sample size, detailed follow-up procedures, or all incident definitions. These details would need to be checked against the full survey documentation before conducting an analysis.</p>
+<p>For CSS, questions remain about the extent to which institutional submissions are independently verified, the available historical coverage, release schedules, and technical file formats. Although federal reporting requirements establish standardized definitions, they do not guarantee that every incident is reported accurately or consistently.</p>
+<p>For PlainCampus, important questions include how institutions with missing reports are handled, which enrollment measure is used, what time period applies to each safety measure, and how the safety scores are calculated. These details matter because the source transforms government data into comparative indicators.</p>
+</section>
+<section id="what-limitations-or-data-quality-issues-might-result-from-collection-methods" class="level3">
+<h3 class="anchored" data-anchor-id="what-limitations-or-data-quality-issues-might-result-from-collection-methods">What limitations or data quality issues might result from collection methods?</h3>
+<p>NCES relies on questionnaires completed by principals or other knowledgeable school personnel. Responses may be influenced by the respondent’s knowledge, interpretation of questions, and the quality of school records.</p>
+<p>CSS relies on crime statistics reported by institutions. These counts may be affected by differences in reporting practices, awareness of reporting procedures, and the willingness of individuals to report incidents. Therefore, the number of reported crimes may not represent every crime that occurred.</p>
+<p>PlainCampus inherits limitations from its underlying federal sources and introduces additional considerations through data aggregation and normalization. At smaller campuses, a relatively small number of incidents can produce a substantial change in the reported crime rate per 1,000 students.</p>
+<p>Our teammate’s original analysis also raised a concern about PlainCampus using a single year of data for its safety score. Because the fact sheet describes a two-year coverage period, the exact calculation period should be verified before drawing conclusions about this limitation.</p>
+</section>
+</section>
+<section id="degree-of-relevance-to-our-research-question" class="level2">
+<h2 class="anchored" data-anchor-id="degree-of-relevance-to-our-research-question">2. Degree of Relevance to Our Research Question</h2>
+<section id="how-do-the-collection-methods-affect-possible-conclusions" class="level3">
+<h3 class="anchored" data-anchor-id="how-do-the-collection-methods-affect-possible-conclusions">How do the collection methods affect possible conclusions?</h3>
+<p>NCES provides information about crime, disciplinary actions, safety policies, prevention programs, and other conditions in public elementary and secondary schools. Researchers could use these data to investigate differences in safety practices or reported incidents among K–12 schools. However, because the survey does not represent colleges and universities, it is not directly suitable for our research question.</p>
+<p>CSS provides reported campus crime statistics organized by institution, offense category, location, and reporting year. This structure allows researchers to examine specific categories of violent crime and compare reported incidents among colleges and universities. It also supports examining how reported crime patterns change over time.</p>
+<p>PlainCampus provides institution-level comparative safety information, including reported criminal offenses and Violence Against Women Act (VAWA) reports relative to enrollment. Its normalized measures may simplify comparisons among colleges of different sizes. However, researchers must verify which offense categories are included before using those measures specifically to investigate violent crime.</p>
+</section>
+<section id="which-variables-would-be-used-as-proxies" class="level3">
+<h3 class="anchored" data-anchor-id="which-variables-would-be-used-as-proxies">Which variables would be used as proxies?</h3>
+<p>Our research question involves two primary variables: undergraduate tuition costs and reported violent crime rates.</p>
+<p>Reported violent crime statistics provide a measure of incidents recorded through institutional reporting systems. They can serve as a limited indicator of campus safety, but they do not measure every crime or an individual’s actual risk of victimization.</p>
+<p>Enrollment would be used to normalize crime counts, allowing us to calculate reported incidents per 1,000 students. However, enrollment is not a perfect representation of the campus population because it does not account for differences in residential and commuter students, employees, visitors, or the amount of time individuals spend on campus.</p>
+<p>Annual tuition costs are also important to interpret carefully. Tuition measures the published price of attending an institution, but it does not necessarily indicate institutional wealth, security spending, or the financial resources available to students. Financial aid can also make the amount students actually pay substantially different from published tuition.</p>
+</section>
+<section id="what-additional-data-would-improve-the-sources" class="level3">
+<h3 class="anchored" data-anchor-id="what-additional-data-would-improve-the-sources">What additional data would improve the sources?</h3>
+<p>For NCES, including prominent information about survey response rates, nonresponse, and sampling limitations alongside the downloadable data would make the source easier to evaluate.</p>
+<p>For CSS, combining crime reporting with standardized enrollment and tuition information would make it easier to investigate relationships between institutional characteristics and reported crime rates.</p>
+<p>For PlainCampus, additional documentation explaining the safety score methodology, crime categories, enrollment definitions, reporting periods, and treatment of missing data would improve transparency.</p>
+<p>Most importantly, none of our three fact sheets identifies annual undergraduate tuition costs as an available variable. To answer our research question, we would need additional tuition information, potentially from IPEDS, and match it with institution-level crime data.</p>
+</section>
+</section>
+<section id="ethical-soundness" class="level2">
+<h2 class="anchored" data-anchor-id="ethical-soundness">3. Ethical Soundness</h2>
+<section id="what-possible-bias-might-be-present" class="level3">
+<h3 class="anchored" data-anchor-id="what-possible-bias-might-be-present">What possible bias might be present?</h3>
+<p>All three sources may contain reporting or measurement bias.</p>
+<p>NCES relies on responses from school personnel, whose knowledge and interpretations may differ. CSS relies on institutional crime reporting, which can vary according to reporting practices and the willingness of individuals to report incidents.</p>
+<p>PlainCampus uses previously collected federal data, meaning it may carry forward limitations from those sources. Its normalization and scoring procedures may also affect how institutions are compared.</p>
+<p>These differences create an important concern: a campus reporting more crimes is not necessarily less safe than one reporting fewer crimes. Higher reported counts could partly reflect more accessible reporting systems or greater awareness of reporting procedures.</p>
+</section>
+<section id="what-ethical-concerns-might-be-connected-to-these-sources" class="level3">
+<h3 class="anchored" data-anchor-id="what-ethical-concerns-might-be-connected-to-these-sources">What ethical concerns might be connected to these sources?</h3>
+<p>One concern is privacy, particularly at smaller institutions. When incident counts are very low, publishing highly detailed information about an offense could potentially make it easier to identify individuals involved, especially when combined with information from other sources.</p>
+<p>Another concern is institutional reputation. Ranking colleges based only on reported crime rates may create misleading impressions about campus safety and unfairly penalize institutions with more effective reporting practices.</p>
+<p>Our research question also creates a risk of interpreting tuition costs as an indicator of student wealth or institutional quality. Colleges with higher tuition are not necessarily safer, better funded for security, or attended exclusively by wealthier students.</p>
+<p>For these reasons, our group should avoid suggesting that tuition causes differences in violent crime rates. Even if a statistical relationship were identified, other factors, including campus location, institution size, residential population, and reporting practices, could influence the results.</p>
+</section>
+</section>
+<section id="scope-and-representation" class="level2">
+<h2 class="anchored" data-anchor-id="scope-and-representation">4. Scope and Representation</h2>
+<section id="what-does-one-observation-represent" class="level3">
+<h3 class="anchored" data-anchor-id="what-does-one-observation-represent">What does one observation represent?</h3>
+<p>In the NCES SSOCS dataset, the unit of observation is an individual public K–12 school. The survey is designed to represent public elementary, middle, high, and combined schools across the United States.</p>
+<p>CSS contains institution-level campus crime reporting, with observations organized according to institutional identifiers, crime categories, locations, and reporting periods. Its data can be used to examine reported offenses at postsecondary institutions.</p>
+<p>PlainCampus presents institution-level safety information for U.S. colleges and universities, including comparative crime measures normalized by enrollment.</p>
+</section>
+<section id="which-populations-do-the-datasets-represent" class="level3">
+<h3 class="anchored" data-anchor-id="which-populations-do-the-datasets-represent">Which populations do the datasets represent?</h3>
+<p>NCES represents public K–12 schools throughout the United States.</p>
+<p>CSS focuses on U.S. postsecondary institutions subject to federal campus crime reporting requirements.</p>
+<p>PlainCampus focuses on U.S. colleges and universities included in its aggregated federal data.</p>
+<p>These population differences are important because our research question specifically concerns undergraduate tuition and violent crime at colleges and universities.</p>
+<p>NCES provides valuable information about educational safety but does not represent the population we want to study. CSS and PlainCampus are therefore more directly relevant.</p>
+</section>
+<section id="what-other-claims-could-reasonably-be-made" class="level3">
+<h3 class="anchored" data-anchor-id="what-other-claims-could-reasonably-be-made">What other claims could reasonably be made?</h3>
+<p>NCES could be used to investigate the prevalence of reported safety policies, disciplinary practices, or prevention programs among public schools.</p>
+<p>CSS could be used to compare reported crime categories, examine changes in reported incidents over time, or investigate differences among postsecondary institutions.</p>
+<p>PlainCampus could be used to compare enrollment-normalized reported offense measures across institutions, provided that its definitions and calculation methods are understood.</p>
+<p>However, none of these sources alone can establish whether higher tuition causes higher or lower rates of violent crime.</p>
+</section>
+</section>
+<section id="overall-assessment-and-conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="overall-assessment-and-conclusion">5. Overall Assessment and Conclusion</h2>
+<p>After comparing the three sources, our group determined that the Campus Safety and Security (CSS) dataset is the most appropriate primary source for investigating the relationship between annual undergraduate tuition costs and reported violent crime rates at U.S. colleges and universities.</p>
+<p>CSS provides official institution-level crime reporting, documented offense categories, and information that can be used to examine specific violent crimes. These characteristics make it more directly applicable to our research question.</p>
+<p>PlainCampus is also relevant because it presents comparative campus crime measures normalized by enrollment. However, its methodology would require additional verification before relying on its safety scores or using its aggregated measures specifically for violent crime analysis.</p>
+<p>NCES SSOCS is a reputable and well-documented source, but its focus on K–12 public schools makes it less appropriate for investigating crime at colleges and universities.</p>
+<p>A limitation shared by the three sources is that none of our fact sheets documents the undergraduate tuition variable required for our research question. We would therefore need to supplement the selected campus crime data with tuition and enrollment information, potentially from IPEDS.</p>
+<p>Our comparison demonstrates that selecting a trustworthy dataset is only one part of conducting responsible research. The population represented, collection methods, variable definitions, documentation, reporting bias, and ethical implications must also be considered.</p>
+<p>Although CSS provides the strongest foundation for our research question, additional data and careful statistical analysis would be necessary to determine whether an association exists between tuition costs and reported violent crime rates</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
