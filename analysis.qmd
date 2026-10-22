@@ -1,7 +1,6 @@
 ---
 title: "Phase 3: Comparative Analysis of Campus Safety Data Sources"
 editor: visual
-format: pdf
 ---
 
 ## Research Question
