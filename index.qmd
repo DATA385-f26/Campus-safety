@@ -4,8 +4,10 @@ title: "Investigating a Dataset's Ingredients"
 
 ## Topic Area
 
-Introduce your topic area. What did you choose, why did you choose it? 
+Introduce your topic area. What did you choose, why did you choose it?\
+Our group chose Campus safety as our topic. We decided it would be relevant to current day situations, including news articles about the Cornell 7 case. We are interested in what could be a factor in campus safety and keeping students safe.\
 
 ## Research Question
 
-State your research question that you hope to answer with data. 
+State your research question that you hope to answer with data.\
+Is there a relationship between annual undergraduate tuition costs and the rate of reported violent crimes at U.S. colleges and universities?\
