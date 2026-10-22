@@ -17,10 +17,12 @@ website:
         file: index.qmd
       - text: Dataset Details
         menu:
-        - text: "Person 1"
-          href: person1.qmd
+        - text: "Jack Roue"
+          href: JackRoue.qmd
         - text: "Cailin Wilson"
-          href: person2.qmd
+          href: Cailin.Wilsom.qmd
+        - text: "Tony "
+          href: Tony.qmd
       - text: "Comparative Analysis"
         href: comparison.qmd
 
