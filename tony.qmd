@@ -1,0 +1,53 @@
+---
+title: "Campus Safety and Security (CSS) Data"
+subtitle: "Data Source Facts Label"
+author: "Tony Fierro"
+---
+
+This fact sheet describes the U.S. Department of Education's Campus Safety and Security (CSS) Data source.
+
+[View the original Google Sheet](https://docs.google.com/spreadsheets/d/1xMjVUos8P5D3NkS72GgfstG9vF1OHzkwIAvhAloP3Ds/edit?usp=sharing)
+
+
+## Source Identity
+
+| Field | Description |
+|---|---|
+| **Source name** | Campus Safety and Security (CSS) Data |
+| **Domain/topic** | Higher education; campus crime, violence, security, and public safety |
+| **Source type** | DAT — downloadable institutional data files |
+
+## Collection Context
+
+| Field | Description |
+|---|---|
+| **Collector/producer** | U.S. Department of Education, Office of Postsecondary Education (OPE) |
+| **Original purpose** | To collect and publish information about crime and safety at U.S. colleges and universities, support federal reporting requirements, and provide students, families, and the public with information about campus safety. |
+| **Collection method** | Annual Campus Safety and Security Survey completed by postsecondary institutions participating in federal student financial assistance programs. Institutions report statistics collected through campus security authorities and other applicable sources. |
+| **Record-creation event** | An institution submits its annual Campus Safety and Security Survey, reporting criminal offenses, arrests, disciplinary referrals, and other required safety statistics for the applicable reporting years. |
+
+## Observation and Scope
+
+| Field | Description |
+|---|---|
+| **Unit of observation** | Individual postsecondary institution or campus, with reported incidents categorized by offense, calendar year, and geographic location. |
+| **Population or objects represented** | U.S. colleges and universities participating in Title IV federal student financial assistance programs. |
+| **Time period covered** | Annual reporting, with each survey generally including crime statistics for the preceding three calendar years. |
+| **Geographic area coverage** | United States, including participating postsecondary institutions nationwide. |
+
+## Variables and Data Structure
+
+| Field | Description |
+|---|---|
+| **Main variables/fields** | Institution name and location; criminal offense categories; reported incidents of murder, robbery, aggravated assault, burglary, motor vehicle theft, sexual offenses, and other crimes; hate crimes; arrests; disciplinary referrals; and campus geographic categories. |
+| **Data types included** | Categorical variables, institution identifiers, calendar years, geographic classifications, and numerical counts of reported incidents. |
+| **Direct measurements** | Institution-reported counts of criminal offenses, arrests, disciplinary referrals, and other incidents occurring within defined campus reporting locations. |
+| **Possible proxy variables** | Reported crime counts as indicators of campus safety; arrests and disciplinary referrals as indicators of reported violations; changes in incident counts over time as indicators of trends in campus crime and safety. |
+
+## Documentation
+
+| Field | Description |
+|---|---|
+| **Documentation found** | Campus Safety and Security Survey User's Guide; Campus Safety and Security Data Analysis Cutting Tool User Guide; downloadable institutional data files; survey reporting instructions and definitions. |
+| **Stated collection details** | Postsecondary institutions participating in federal student financial assistance programs submit annual campus crime and safety statistics under the Clery Act. Reported incidents are classified by offense type, calendar year, and geographic location. The Department of Education makes the information publicly available for institutional comparisons and analysis. |
+
