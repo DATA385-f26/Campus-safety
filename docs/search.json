@@ -63,13 +63,6 @@
     "text": "Research Question\nState your research question that you hope to answer with data."
   },
   {
-    "objectID": "analysis.html",
-    "href": "analysis.html",
-    "title": "Analysis",
-    "section": "",
-    "text": "Trustworthiness/reputability \\What documentation is available for each source? \\For Cailin’s source, NCES, provides Public-Use Data File User’s Manual, public-use data files, survey questionnaire, and codebook/record-layout documentation. \\For Tony’s source, U.S. Department of Education, provides Survey User’s Guide, Data Analysis Cutting Tool User Guide, downloadable institutional data files, survey reporting instructions and definitions. \\For Jack’s data, Plain Campus, it provides A CSV file and the two government databases it draws from. No methodology document is listed. \\What information is missing, unclear, or not stated in each source? \\For Cailin’s data, the information missing includes: the 2021-22 response rate and final sample size, the mail follow-up details, the file format (earlier years used fixed-format ASCII), and the incident definitions. \\For Tony’s data, the missing information includes: whether OPE verifies submissions, file formats, the earliest year available, and release timing. \\For Jack’s data, missing data includes: how non-reporting campuses are handled, and enrollment definition. \\What limitations or data quality issues might come from how each source was collected? \\For Cailin’s data, \\For Tony’s data, \\For Jack’s data, \\Degree of relevance to research question \\How do the collection methods affect what kinds of conclusions someone could make? \\ \\In order to answer your research question, would you be employing any of the variables as proxies? \\ \\If you could improve one source, what additional data would you add? \\ \\Ethical soundness \\What possible bias might be present in either source? \\ \\What ethical concerns might be connected to either source? Scope What does one row, record, case, or entry represent in each source? \\ \\What populations do each dataset represent? \\ \\Which is more relevant to your research question? Why? \\ \\What other claims could someone reasonably make using these sources? \\"
-  },
-  {
     "objectID": "CailinWilson.html",
     "href": "CailinWilson.html",
     "title": "Data Collection Facts Label",
